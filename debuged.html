@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fa" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزشگاه فامو | مشاوره تخصصی کنکور و تیزهوشان در بابل</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="آموزشگاه فامو بابل - مشاوره تخصصی کنکور و تیزهوشان با اساتید برجسته و پشتیبانان رتبه برتر. دوره‌های تخصصی برای رشته‌های تجربی، ریاضی، انسانی و آمادگی تیزهوشان.">
+    <meta name="keywords" content="کنکور, تیزهوشان, بابل, آموزشگاه, فامو, دوره کنکور, مشاوره تحصیلی, مشاوره کنکور بابل, کلاس کنکور بابل">
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "آموزشگاه فامو",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "بابل",
+            "streetAddress": "میدان باغ فردوس، جنب بیمارستان بابل کلینیک، مدرسه بهارستان"
+        },
+        "telephone": "+981132221234",
+        "url": "https://famoacademy.ir",
+        "founder": {
+            "@type": "Person",
+            "name": "دکتر محمد موسی زاده موسوی"
+        },
+        "priceRange": "3,000,000 تومان"
+    }
+    </script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Vazirmatn) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#FDFCF6',
+                        'dark-text': '#3D3D3D',
+                        'accent-lemon': '#F9E8A8',
+                        'accent-lemon-dark': '#C7B886',
+                        'card-bg': '#FFFFFF',
+                        'border-light': 'rgba(0, 0, 0, 0.08)',
+                        'navy-blue': '#2d3748',
+                        'navy-light': '#4a5568',
+                        'navy-dark': '#1a202c'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'subtle-float': 'subtleFloat 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        subtleFloat: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(-2deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(2deg)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #FDFCF6;
+            direction: rtl;
+            text-align: right;
+            font-family: 'Vazirmatn', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-top: 80px; /* برای منوی شناور */
+        }
+        .modern-card {
+            background-color: #FFFFFF;
+            border: 1px solid #F0F0F0;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+        .modern-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #F9E8A8;
+        }
+        .nav-link { 
+            position: relative; 
+            transition: color 0.3s; 
+        }
+        .nav-link:hover { color: #C7B886; }
+        .nav-link::after {
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 2px;
+            bottom: -6px; 
+            right: 0; 
+            background-color: #F9E8A8;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .hidden-anim { 
+            opacity: 0; 
+            transition: opacity 1s ease-out; 
+        }
+        .show-anim { 
+            opacity: 1; 
+            animation: fadeInUp 0.8s ease-out forwards; 
+        }
+        .modal { 
+            transition: opacity 0.3s ease, visibility 0.3s ease; 
+        }
+        .modal-content { 
+            transition: transform 0.3s ease; 
+        }
+        .ltr-input {
+            text-align: left;
+            direction: ltr;
+        }
+        .navy-bg {
+            background-color: #2d3748;
+            color: white;
+        }
+        .navy-text {
+            color: #2d3748;
+        }
+        .navy-border {
+            border-color: #2d3748;
+        }
+        .navy-btn {
+            background-color: #2d3748;
+            color: white;
+        }
+        .navy-btn:hover {
+            background-color: #1a202c;
+        }
+        /* استایل برای منوی شناور */
+        .floating-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.5s ease-out;
+            background-color: rgba(253, 252, 246, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        /* انیمیشن‌های نوتیفیکیشن */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fade-out {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+        
+        .animate-fade-out {
+            animation: fade-out 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-dark-text font-vazir">
+
+    <!-- Navigation - شناور -->
+    <header id="main-header" class="floating-nav">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center gap-3 text-3xl font-extrabold text-dark-text">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=300" alt="لوگوی آموزشگاه فامو" class="h-10">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link font-medium">خانه</a>
+                    <a href="#courses" class="nav-link font-medium">دوره‌ها</a>
+                    <a href="#team" class="nav-link font-medium">تیم ما</a>
+                    <a href="#services" class="nav-link font-medium">خدمات</a>
+                    <a href="#contact" class="nav-link font-medium">تماس با ما</a>
+                    <a href="#profile" class="nav-link font-medium navy-text">پروفایل</a>
+                    <button id="logout-btn" class="text-red-600 hover:text-red-800 hidden">
+                        <i class="fas fa-sign-out-alt mr-1"></i> خروج
+                    </button>
+                </nav>
+                <div class="flex items-center">
+                    <button id="open-auth-modal-btn" class="hidden md:block navy-btn text-white px-5 py-2 rounded-lg font-bold hover:bg-navy-dark transition duration-300">ورود / ثبت نام</button>
+                    <button id="menuBtn" class="md:hidden text-dark-text focus:outline-none ml-4">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-light-bg border-t border-border-light">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-gray-100">خانه</a>
+                <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-gray-100">دوره‌ها</a>
+                <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-gray-100">تیم ما</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-gray-100">خدمات</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-gray-100">تماس با ما</a>
+                <a href="#profile" class="block px-3 py-2 rounded-md text-base font-medium navy-text hover:bg-gray-100">پروفایل</a>
+                <button id="open-auth-modal-btn-mobile" class="block mt-4 w-full navy-btn text-white text-center px-4 py-2 rounded-lg font-bold">ورود / ثبت نام</button>
+                <button id="logout-btn-mobile" class="block mt-4 w-full text-red-600 text-center px-4 py-2 rounded-lg font-bold hidden">
+                    <i class="fas fa-sign-out-alt mr-1"></i> خروج از حساب
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Landing Section -->
+        <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-3/5 text-center md:text-right">
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 text-dark-text hidden-anim">
+                           مشاوره تخصصی و آموزش مفهومی<br>برای کنکور و تیزهوشان
+                        </h1>
+                        <p class="text-base md:text-lg max-w-xl mx-auto md:mx-0 mb-8 text-dark-text/70 hidden-anim" style="animation-delay: 0.2s;">
+                           آموزشگاه فامو با تیمی از دبیران مجرب و مشاوران حرفه‌ای، همراه دانش‌آموزان در مسیر موفقیت تحصیلی در بابل است.
+                        </p>
+                        <div class="flex justify-center md:justify-end hidden-anim" style="animation-delay: 0.4s;">
+                            <a href="#courses" class="navy-btn text-white px-8 py-3 rounded-lg font-bold hover:bg-navy-dark transition duration-300">مشاهده دوره‌ها</a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/5 mt-12 md:mt-0 flex justify-center">
+                        <div class="relative w-full max-w-lg animate-subtle-float">
+                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" 
+                                 alt="دانش آموزان موفق آموزشگاه فامو" 
+                                 class="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x600/FDFCF6/3D3D3D?text=Famo';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extrabold hidden-anim">دوره‌های تخصصی فامو</h2>
+                    <p class="text-lg mt-4 max-w-2xl mx-auto text-dark-text/70 hidden-anim" style="animation-delay: 0.2s;">برنامه‌ریزی دقیق و آموزش مفهومی برای دانش‌آموزان رشته‌های مختلف و علاقه‌مندان به آزمون تیزهوشان.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Course Card 1: Experimental Sciences -->
+                    <div class="modern-card hidden-anim flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80" alt="دوره علوم تجربی" class="w-full h-56 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2">رشته علوم تجربی</h3>
+                            <p class="mb-4 text-dark-text/70 flex-grow">آموزش مفهومی زیست، شیمی و فیزیک با اساتید مجرب و منابع به‌روز به همراه پشتیبانی اختصاصی و آزمون‌های هفتگی.</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-sm font-semibold bg-accent-lemon/50 text-accent-lemon-dark py-1 px-3 rounded-full">هزینه ترم: ۳م تومان</span>
+                                <button class="bg-accent-lemon text-dark-text px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-lemon-dark transition" onclick="selectCourse('رشته علوم تجربی')">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course Card 2: Math & Physics -->
+                    <div class="modern-card hidden-anim flex flex-col" style="animation-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-150922862715217?auto=format&fit=crop&q=80" alt="دوره ریاضی فیزیک" class="w-full h-56 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2">رشته ریاضی فیزیک</h3>
+                            <p class="mb-4 text-dark-text/70 flex-grow">تقویت پایه ریاضی و فیزیک با تمرکز بر مباحث کنکوری، حل مسائل کاربردی و مشاوره‌های تخصصی.</p>
+                             <div class="flex justify-between items-center mt-4">
+                                <span class="text-sm font-semibold bg-accent-lemon/50 text-accent-lemon-dark py-1 px-3 rounded-full">هزینه ترم: ۳م تومان</span>
+                                <button class="bg-accent-lemon text-dark-text px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-lemon-dark transition" onclick="selectCourse('رشته ریاضی فیزیک')">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course Card 3: Humanities -->
+                     <div class="modern-card hidden-anim flex flex-col" style="animation-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&q=80" alt="دوره علوم انسانی" class="w-full h-56 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2">رشته علوم انسانی</h3>
+                            <p class="mb-4 text-dark-text/70 flex-grow">آموزش تخصصی دروس فلسفه، منطق، ادبیات و علوم اجتماعی به همراه کارگاه‌های مهارت‌افزایی.</p>
+                             <div class="flex justify-between items-center mt-4">
+                                <span class="text-sm font-semibold bg-accent-lemon/50 text-accent-lemon-dark py-1 px-3 rounded-full">هزینه ترم: ۳م تومان</span>
+                                <button class="bg-accent-lemon text-dark-text px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-lemon-dark transition" onclick="selectCourse('رشته علوم انسانی')">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course Card 4: Tizhooshan -->
+                     <div class="modern-card hidden-anim flex flex-col" style="animation-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1596495577886-d9256f442347?auto=format&fit=crop&q=80" alt="دوره آمادگی تیزهوشان" class="w-full h-56 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2">آمادگی تیزهوشان</h3>
+                            <p class="mb-4 text-dark-text/70 flex-grow">دوره ویژه دانش‌آموزان مستعد برای قبولی در آزمون تیزهوشان با حل نمونه سوالات و کلاس‌های فشرده.</p>
+                             <div class="flex justify-between items-center mt-4">
+                                <span class="text-sm font-semibold bg-accent-lemon/50 text-accent-lemon-dark py-1 px-3 rounded-full">هزینه ترم: ۳م تومان</span>
+                                <button class="bg-accent-lemon text-dark-text px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-lemon-dark transition" onclick="selectCourse('آمادگی تیزهوشان')">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extrabold hidden-anim">خدمات ویژه فامو</h2>
+                    <p class="text-lg mt-4 max-w-2xl mx-auto text-dark-text/70 hidden-anim" style="animation-delay: 0.2s;">فراتر از دوره‌ها، ما شما را در مسیر رشد و موفقیت همراهی می‌کنیم.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="modern-card p-8 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-user-tie text-4xl text-navy-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">مشاوره تخصصی</h3>
+                        <p class="text-dark-text/70">برنامه‌ریزی تحصیلی شخصی‌سازی شده توسط مشاوران خبره و رتبه‌های برتر.</p>
+                    </div>
+                    <div class="modern-card p-8 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-chart-line text-4xl text-navy-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">آزمون‌های هفتگی</h3>
+                        <p class="text-dark-text/70">برگزاری آزمون‌های استاندارد و شبیه‌ساز کنکور با تحلیل پیشرفت فردی هر دانش‌آموز.</p>
+                    </div>
+                    <div class="modern-card p-8 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-headset text-4xl text-navy-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">پشتیبانی مستمر</h3>
+                        <p class="text-dark-text/70">پاسخگویی به سوالات درسی و مشاوره‌ای دانش‌آموزان و پیگیری وضعیت تحصیلی آن‌ها.</p>
+                    </div>
+                    <div class="modern-card p-8 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-navy-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">کلاس‌های خصوصی</h3>
+                        <p class="text-dark-text/70">برگزاری جلسات خصوصی و نیمه‌خصوصی برای رفع اشکال تک‌تک دروس با هماهنگی قبلی.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-light-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extrabold hidden-anim">اساتید و پشتیبانان فامو</h2>
+                    <p class="text-lg mt-4 max-w-2xl mx-auto text-dark-text/70 hidden-anim" style="animation-delay: 0.2s;">با تیم حرفه‌ای مشاوران، اساتید و پشتیبانان رتبه برتر ما آشنا شوید.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="دکتر محمد موسوی" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">دکتر محمد موسوی</h3>
+                        <p class="text-accent-lemon-dark font-medium">مشاور ارشد تحصیلی</p>
+                    </div>
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200" alt="مهندس علی موسوی" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">مهندس علی موسوی</h3>
+                        <p class="text-accent-lemon-dark font-medium">مدرس ریاضی</p>
+                    </div>
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="دکتر اسماعیل حاجیان" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">دکتر اسماعیل حاجیان</h3>
+                        <p class="text-accent-lemon-dark font-medium">مدرس فیزیک</p>
+                    </div>
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="استاد رضا نصرالله زاده" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">استاد رضا نصرالله زاده</h3>
+                        <p class="text-accent-lemon-dark font-medium">مدرس شیمی</p>
+                    </div>
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1614289371518-722f2615943d?auto=format&fit=crop&q=80&w=200" alt="دکتر مانی محسنی" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">دکتر مانی محسنی</h3>
+                        <p class="text-accent-lemon-dark font-medium">مدرس زیست</p>
+                    </div>
+                    <div class="modern-card p-6 text-center">
+                        <div class="rounded-full overflow-hidden w-24 h-24 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?auto=format&fit=crop&q=80&w=200" alt="استاد رضا رحمان زاده" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold">استاد رضا رحمان زاده</h3>
+                        <p class="text-accent-lemon-dark font-medium">مدرس ادبیات</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Profile Section -->
+        <section id="profile" class="py-24 hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-extrabold navy-text">پروفایل کاربری</h2>
+                    <p class="text-lg mt-4 max-w-2xl mx-auto text-dark-text/70">مدیریت دوره‌ها و اطلاعات حساب کاربری</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- User Info Card -->
+                    <div class="modern-card lg:col-span-1">
+                        <div class="p-6">
+                            <div class="flex flex-col items-center mb-6">
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent-lemon mb-4">
+                                    <img src="https://ui-avatars.com/api/?name=کاربر+فامو&background=random" alt="پروفایل کاربر" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-xl font-bold" id="user-name">مریم رضایی</h3>
+                                <p class="text-navy-blue font-medium">دانش‌آموز پایه دوازدهم</p>
+                                <p class="mt-2 text-dark-text/70">رشته علوم تجربی</p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-dark-text/70">ایمیل:</span>
+                                    <span id="user-email">maryam.rezaei@example.com</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-dark-text/70">تلفن:</span>
+                                    <span id="user-phone">09123456789</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-dark-text/70">تاریخ ثبت‌نام:</span>
+                                    <span>۱۴۰۳/۰۵/۲۵</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full mt-6 bg-navy-blue text-white py-2 rounded-lg font-bold hover:bg-navy-dark transition">
+                                ویرایش پروفایل
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Courses & Payment Section -->
+                    <div class="modern-card lg:col-span-2">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4">دوره‌های من</h3>
+                            
+                            <div id="user-courses" class="space-y-4 mb-8">
+                                <div class="bg-light-bg rounded-lg p-4 flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-bold">رشته علوم تجربی</h4>
+                                        <p class="text-sm text-dark-text/70">ترم پاییز ۱۴۰۳</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-sm font-semibold bg-green-100 text-green-800 py-1 px-3 rounded-full">فعال</span>
+                                        <button class="ml-2 text-red-500 hover:text-red-700">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-border-light pt-6">
+                                <h3 class="text-2xl font-bold mb-4">خرید دوره جدید</h3>
+                                <p class="mb-4 text-dark-text/70">برای ثبت نام در دوره‌های جدید از لیست زیر انتخاب کنید:</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="border border-border-light rounded-lg p-4">
+                                        <h4 class="font-bold">رشته علوم تجربی</h4>
+                                        <p class="text-sm text-dark-text/70 my-2">آموزش مفهومی زیست، شیمی و فیزیک با اساتید مجرب</p>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold">۳,۰۰۰,۰۰۰ تومان</span>
+                                            <button class="bg-navy-blue text-white px-4 py-1 rounded text-sm hover:bg-navy-dark">خرید</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border border-border-light rounded-lg p-4">
+                                        <h4 class="font-bold">رشته ریاضی فیزیک</h4>
+                                        <p class="text-sm text-dark-text/70 my-2">تقویت پایه ریاضی و فیزیک با تمرکز بر مباحث کنکوری</p>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold">۳,۰۰۰,۰۰۰ تومان</span>
+                                            <button class="bg-navy-blue text-white px-4 py-1 rounded text-sm hover:bg-navy-dark">خرید</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border border-border-light rounded-lg p-4">
+                                        <h4 class="font-bold">رشته علوم انسانی</h4>
+                                        <p class="text-sm text-dark-text/70 my-2">آموزش تخصصی دروس فلسفه، منطق، ادبیات و علوم اجتماعی</p>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold">۳,۰۰۰,۰۰۰ تومان</span>
+                                            <button class="bg-navy-blue text-white px-4 py-1 rounded text-sm hover:bg-navy-dark">خرید</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border border-border-light rounded-lg p-4">
+                                        <h4 class="font-bold">آمادگی تیزهوشان</h4>
+                                        <p class="text-sm text-dark-text/70 my-2">دوره ویژه دانش‌آموزان مستعد برای قبولی در آزمون تیزهوشان</p>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-semibold">۳,۰۰۰,۰۰۰ تومان</span>
+                                            <button class="bg-navy-blue text-white px-4 py-1 rounded text-sm hover:bg-navy-dark">خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Footer -->
+        <footer id="contact" class="pt-24 pb-12 bg-card-bg">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- About Column -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">درباره فامو</h3>
+                        <p class="text-dark-text/70 mb-4">آموزشگاه فامو با هدف پرورش استعدادها و رساندن دانش‌آموزان به قله‌های موفقیت در آزمون‌های کنکور و تیزهوشان در شهر بابل تاسیس شده است.</p>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="https://t.me/famoacademy" target="_blank" class="text-dark-text/70 hover:text-navy-blue"><i class="fab fa-telegram text-xl"></i></a>
+                            <a href="#" class="text-dark-text/70 hover:text-navy-blue"><i class="fab fa-instagram text-xl"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links Column -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">دسترسی سریع</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-dark-text/70 hover:text-navy-blue transition">خانه</a></li>
+                            <li><a href="#courses" class="text-dark-text/70 hover:text-navy-blue transition">دوره‌ها</a></li>
+                            <li><a href="#team" class="text-dark-text/70 hover:text-navy-blue transition">تیم ما</a></li>
+                            <li><a href="#services" class="text-dark-text/70 hover:text-navy-blue transition">خدمات</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info Column -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">تماس با ما</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 ml-2 text-navy-blue"></i>
+                                <span class="text-dark-text/70">بابل، میدان باغ فردوس، جنب بیمارستان بابل کلینیک، مدرسه بهارستان</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 ml-2 text-navy-blue"></i>
+                                <span class="text-dark-text/70">۰۱۱-۳۲۲۲۱۲۳۴</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 ml-2 text-navy-blue"></i>
+                                <span class="text-dark-text/70">info@famoacademy.ir</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter Column -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">عضویت در خبرنامه</h3>
+                        <p class="text-dark-text/70 mb-4">برای دریافت آخرین اخبار و مقالات مشاوره‌ای ایمیل خود را وارد کنید.</p>
+                        <form class="flex flex-col sm:flex-row gap-2">
+                            <input type="email" placeholder="ایمیل شما" class="bg-light-bg border border-border-light rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-accent-lemon">
+                            <button class="navy-btn text-white px-4 py-2 rounded-lg font-bold hover:bg-navy-dark transition whitespace-nowrap">ارسال</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="border-t border-border-light mt-12 pt-6 text-center text-dark-text/50">
+                    <p>تمامی حقوق برای آموزشگاه فامو محفوظ است. © <span id="year"></span></p>
+                    <p class="mt-1 text-sm">مدیریت: دکتر محمد موسی زاده موسوی</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Auth (Login/Signup) Modal -->
+    <div id="auth-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 hidden">
+        <div class="bg-card-bg rounded-2xl w-full max-w-md mx-auto p-8 relative">
+             <button id="close-auth-modal-btn" class="absolute top-4 left-4 text-dark-text/50 hover:text-dark-text transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h2 class="text-3xl font-bold text-center mb-6">ثبت نام در فامو</h2>
+            <p class="text-center text-dark-text/70 mb-8">برای شروع، اطلاعات خود را وارد کنید.</p>
+            <form class="space-y-4" id="signup-form">
+                <div>
+                    <label for="fullName" class="text-sm font-medium text-dark-text/80 block mb-2">نام و نام خانوادگی</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="مثال: مریم رضایی" required class="bg-light-bg w-full p-3 rounded-lg border border-border-light focus:outline-none focus:ring-2 focus:ring-accent-lemon text-dark-text">
+                </div>
+                 <div>
+                    <label for="mobile" class="text-sm font-medium text-dark-text/80 block mb-2">شماره همراه</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="09123456789" required class="ltr-input bg-light-bg w-full p-3 rounded-lg border border-border-light focus:outline-none focus:ring-2 focus:ring-accent-lemon text-dark-text">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="grade" class="text-sm font-medium text-dark-text/80 block mb-2">پایه تحصیلی</label>
+                        <select id="grade" name="grade" required class="bg-light-bg w-full p-3 rounded-lg border border-border-light focus:outline-none focus:ring-2 focus:ring-accent-lemon text-dark-text">
+                            <option>دهم</option>
+                            <option>یازدهم</option>
+                            <option>دوازدهم</option>
+                            <option>فارغ التحصیل</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="field" class="text-sm font-medium text-dark-text/80 block mb-2">رشته / دوره</label>
+                        <select id="field" name="field" required class="bg-light-bg w-full p-3 rounded-lg border border-border-light focus:outline-none focus:ring-2 focus:ring-accent-lemon text-dark-text">
+                            <option>علوم تجربی</option>
+                            <option>ریاضی فیزیک</option>
+                            <option>علوم انسانی</option>
+                            <option>آمادگی تیزهوشان</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full mt-4 navy-btn text-white px-8 py-3 rounded-lg font-bold hover:bg-navy-dark transition duration-300">ثبت نام</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JS for interactivity -->
+    <script>
+        // توابع مدیریت مودال
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+        
+        // مدیریت رویدادهای منو
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- General UI ---
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            
+            document.querySelectorAll('#mobileMenu a, #mobileMenu button').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+            
+            // --- Modal Logic ---
+            const authModal = document.getElementById('auth-modal');
+            const openAuthBtn = document.getElementById('open-auth-modal-btn');
+            const openAuthBtnMobile = document.getElementById('open-auth-modal-btn-mobile');
+            const closeAuthBtn = document.getElementById('close-auth-modal-btn');
+            const signupForm = document.getElementById('signup-form');
+
+            openAuthBtn?.addEventListener('click', () => openModal('auth-modal'));
+            openAuthBtnMobile?.addEventListener('click', () => openModal('auth-modal'));
+            closeAuthBtn?.addEventListener('click', () => closeModal('auth-modal'));
+            
+            authModal?.addEventListener('click', (e) => {
+                if (e.target === authModal) closeModal('auth-modal');
+            });
+            
+            // --- Signup Form Handling ---
+            signupForm?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const fullName = document.getElementById('fullName').value;
+                const mobile = document.getElementById('mobile').value;
+                const grade = document.getElementById('grade').value;
+                const field = document.getElementById('field').value;
+                
+                // ذخیره اطلاعات کاربر
+                localStorage.setItem('userData', JSON.stringify({
+                    name: fullName,
+                    phone: mobile,
+                    grade: grade,
+                    field: field,
+                    email: `${mobile}@famoacademy.ir`
+                }));
+                
+                // بستن مودال
+                closeModal('auth-modal');
+                
+                // نمایش پیام موفقیت
+                showNotification('ثبت نام با موفقیت انجام شد! خوش آمدید.');
+                
+                // به‌روزرسانی پروفایل
+                updateProfileInfo();
+                
+                // نمایش پروفایل
+                document.getElementById('profile').classList.remove('hidden');
+                document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // --- Intersection Observer for animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-anim');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.hidden-anim').forEach((el) => observer.observe(el));
+            
+            // نمایش اطلاعات کاربر اگر از قبل ذخیره شده
+            updateProfileInfo();
+        });
+        
+        // به‌روزرسانی اطلاعات پروفایل
+        function updateProfileInfo() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData) {
+                document.getElementById('user-name').textContent = userData.name;
+                document.getElementById('user-phone').textContent = userData.phone;
+                document.getElementById('user-email').textContent = userData.email;
+            }
+        }
+        
+        // انتخاب دوره
+        function selectCourse(courseName) {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (!userData) {
+                openModal('auth-modal');
+                return;
+            }
+            
+            showNotification(`دوره ${courseName} با موفقیت انتخاب شد!`);
+            document.getElementById('profile').classList.remove('hidden');
+            document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // نمایش نوتیفیکیشن
+        function showNotification(message, type = 'success') {
+            // حذف نوتیفیکیشن‌های قبلی
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg text-white font-bold animate-fade-in ${
+                type === 'success' ? 'bg-green-500' : 'bg-red-500'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // حذف خودکار پس از 3 ثانیه
+            setTimeout(() => {
+                notification.classList.add('animate-fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
